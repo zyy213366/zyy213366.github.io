@@ -101,4 +101,11 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/Austinnumber2/Austinnumber2.gitHub.io.git
+  branch: master
+  search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000

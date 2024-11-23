@@ -57,31 +57,31 @@ social:
 favicon: /img/favicon.png
 
 avatar:
-  img: /img/butterfly-icon.png
+  img: /img/下载1.jpg
   effect: false
 
 # Disable all banner images
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img: https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1msDMN.img
+default_top_img: /img/02.jpg
 
 # The banner image of index page
-index_img: https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1msDMN.img
+index_img: /img/02.jpg
 
 # The banner image of archive page
-archive_img: https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1msDMN.img
+archive_img: /img/02.jpg
 
 # Note: tag page, not tags page
-tag_img: https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1msDMN.img
+tag_img: /img/02.jpg
 
 # The banner image of tag page, you can set the banner image for each tag
 # Format:
 #  - tag name: xxxxx
-tag_per_img: https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1msDMN.img
+tag_per_img: /img/02.jpg
 
 # Note: category page, not categories page
-category_img:
+category_img: /img/02.jpg
 
 # The banner image of category page, you can set the banner image for each category
 # Format:
@@ -93,7 +93,7 @@ footer_img: false
 
 # Website Background
 # Can set it to color or image url
-background:
+background: /img/02.jpg
 
 cover:
   # Disable the cover or not
@@ -101,7 +101,7 @@ cover:
   aside_enable: true
   archives_enable: true
   # When cover is not set, the default cover is displayed
-  default_cover:
+  default_cover:  /img/02.jpg
   # - xxx.jpg
 
 # Replace Broken Images
@@ -201,19 +201,19 @@ toc:
 
 post_copyright:
   enable: true
-  decode: false
+  decode: true
   author_href:
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 # Sponsor/reward
 reward:
-  enable: false
+  enable: true
   text:
   QR_code:
-  # - img: /img/wechat.jpg
-  #   link:
-  #   text: wechat
+   - img: /img/pay.jpg
+     link:
+     text: 微信支付
   # - img: /img/alipay.jpg
   #   link:
   #   text: alipay
@@ -258,8 +258,8 @@ noticeOutdate:
 footer:
   owner:
     enable: true
-    since: 2019
-  custom_text:
+    since: 2024
+  custom_text: 很高兴认识你
   # Copyright of theme and framework
   copyright: true
 
@@ -274,7 +274,7 @@ aside:
   button: true
   mobile: true
   # Position: left / right
-  position: right
+  position: left
   display:
     archive: true
     tag: true
@@ -285,11 +285,11 @@ aside:
     button:
       enable: true
       icon: fab fa-github
-      text: Follow Me
+      text: 请关注我
       link: https://github.com/xxxxxx
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 这是austin的博客，austin会在上面分享自己经历的有趣的事~
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -359,7 +359,7 @@ rightside_bottom:
 
 # Conversion between Traditional and Simplified Chinese
 translate:
-  enable: false
+  enable: true
   # The text of a button
   default: 繁
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
@@ -411,7 +411,7 @@ anchor:
   # Click the headline to scroll and update the anchor
   click_to_scroll: false
 
-photofigcaption: false
+photofigcaption: true
 
 copy:
   enable: true
@@ -467,7 +467,7 @@ math:
 search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
-  use:
+  use: local_search
   placeholder:
 
   # Algolia Search
