@@ -6,3 +6,9 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+themes/butterfly/.git
+.idea
+.deploy_git*/
+.vscode/
+.idea/
+/.idea/
