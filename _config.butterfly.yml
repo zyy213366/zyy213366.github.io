@@ -71,7 +71,6 @@ index_img: /img/02.jpg
 
 # The banner image of archive page
 archive_img: /img/02.jpg
-
 # Note: tag page, not tags page
 tag_img: /img/02.jpg
 
@@ -86,7 +85,7 @@ category_img: /img/02.jpg
 # The banner image of category page, you can set the banner image for each category
 # Format:
 #  - category name: xxxxx
-category_per_img:
+category_per_img: /img/02.jpg
 
 # The background image of footer
 footer_img: /img/02.jpg
@@ -101,7 +100,7 @@ cover:
   aside_enable: true
   archives_enable: true
   # When cover is not set, the default cover is displayed
-  default_cover:  /img/02.jpg
+  default_cover:  './img/02.jpg'
   # - xxx.jpg
 
 # Replace Broken Images
