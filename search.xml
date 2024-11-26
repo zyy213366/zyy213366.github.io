@@ -42,38 +42,13 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/2024/11/22/try/"/>
-      <url>/2024/11/22/try/</url>
-      
-        <content type="html"><![CDATA[<h2 id="代码的展示"><a href="#代码的展示" class="headerlink" title="代码的展示"></a>代码的展示</h2><p>22222</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123; </span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;hello world&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="怎么用"><a href="#怎么用" class="headerlink" title="怎么用"></a>怎么用</h3><p>11111111111</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 代码分享 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello i am austin,it is my first time to write a blog</title>
+      <title>关于博客的一些事</title>
       <link href="/2024/11/21/a/"/>
       <url>/2024/11/21/a/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p><strong>这是我一次建立自己的博客，希望在博客上分享自己的生活学习。得益于Sanstale的帮助，使我能够顺利地把博客部署到网站。特此表达感谢之情，也希望大家能去看看他的博客，以下是链接。</strong><br><a href="https://www.cybereal.one/">https://www.cybereal.one/</a></p>]]></content>
       
       
-      
-        <tags>
-            
-            <tag> 生活记录 </tag>
-            
-        </tags>
       
     </entry>
     
