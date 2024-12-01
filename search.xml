@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>大语言模型的本地部署分享</title>
+      <link href="/2024/12/01/ollama/"/>
+      <url>/2024/12/01/ollama/</url>
+      
+        <content type="html"><![CDATA[<h2 id="大语言模型的本地部署分享"><a href="#大语言模型的本地部署分享" class="headerlink" title="大语言模型的本地部署分享"></a>大语言模型的本地部署分享</h2><p>前几天用的梯子过期没续费，直接用不了chatgpt，差点耽误我交作业，因此我想本地部署一个大语言模型，满足我的使用需求</p><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>能够成功在本地部署大语言模型，实现不通过联网使用的目的。</p><h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><ol><li><p>下载 <code>ollama</code><br>用魔法进入 <code>ollama</code> 官网 <a href="https://ollama.com/">https://ollama.com/</a> 下载 <code>ollama</code> 启动器，并完成安装。<br><img src="/img/page_1.png"><br>进入cmd，输入<code>ollama</code>来判断是否安装成功。<br><img src="/img/page_2.png"></p></li><li><p>通过 <code>ollama</code> 下载大语言模型<br>进入官网下载大语言模型，由于是个人电脑，推荐选小一点的。比如9b，就是9亿参数，大概五个g。<br><img src="/img/page_3.png"><br>下载完成后我们可以通过命令行调用的方式完成对话，先输入<code>ollama run gemma2</code>,然后对话即可。<br><img src="/img/page_4.png"></p></li><li><p>下载 <code>docker</code>，下载 <code>openwebui</code> 并且部署<br>既然已经可以运行，我们为什么还要下载<code>docker</code>和<code>openwebui</code>呢？因为输入命令行调用的方法太过繁琐，而<code>docker</code>和<code>openwebui</code>能给我们一个整洁的页面，前者可以理解为一个后端，而后者可以理解为前端页面。</p><p>首先我们进入<code>docker</code>下载地址<a href="https://github.com/tech-shrimp/docker_installer">https://github.com/tech-shrimp/docker_installer</a> 在浏览器内打开，我们需要在本地<strong>启用或关闭windows功能</strong>中选择<strong>适用于linux的windows子系统</strong>和<strong>虚拟机平台</strong>，打勾，重启电脑。<br><img src="/img/page_5.png"><br>再通过管理员权限打开cmd，复制以下代码并运行：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wsl --set-default-version 2</span><br><span class="line">wsl --update --web-download</span><br></pre></td></tr></table></figure><p><img src="/img/page_6.png"><br>安装完成后进入页面右侧release下载 docker_desktop_installer_windows_x86_64.exe </p><p>并且双击下载完成的 <code>docker</code> 启动器完成docker安装。<br><img src="/img/page_7.png"><br>之后下载 <code>openwebui</code> ，进入网址 <a href="https://github.com/open-webui/open-webui">https://github.com/open-webui/open-webui</a> ，在docker开启的条件下在cmd中运行以下命令</p> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main</span><br></pre></td></tr></table></figure><p>安装完成后在<code>docker</code>中就能找到端口号进行访问。<br><img src="/img/page_8.png"></p></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 代码分享 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>迪士尼门票计算代码分享</title>
       <link href="/2024/11/26/disney/"/>
       <url>/2024/11/26/disney/</url>
