@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>temp_python | austin blog</title><meta name="author" content="austin"><meta name="copyright" content="austin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="例题假设我们有一张钢材信息表，包含以下字段： steel_id：钢材编号steelspec：钢种slabweight：钢材重量slabthickness：钢材厚度 目标：  重命名 steel_id 为 steel_code。 找出 slabweight 最大值对应的钢材信息。 按 slabweight 降序排列钢材信息表。 筛选出钢种为 X50M 的钢材，并计算其平均重量。 筛选出钢种以 X 开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="temp_python">
+<meta property="og:url" content="https://zyy213366.github.io/2025/01/11/temp-python/index.html">
+<meta property="og:site_name" content="austin blog">
+<meta property="og:description" content="例题假设我们有一张钢材信息表，包含以下字段： steel_id：钢材编号steelspec：钢种slabweight：钢材重量slabthickness：钢材厚度 目标：  重命名 steel_id 为 steel_code。 找出 slabweight 最大值对应的钢材信息。 按 slabweight 降序排列钢材信息表。 筛选出钢种为 X50M 的钢材，并计算其平均重量。 筛选出钢种以 X 开">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zyy213366.github.io/img/02.jpg">
+<meta property="article:published_time" content="2025-01-11T13:36:51.000Z">
+<meta property="article:modified_time" content="2025-01-11T13:45:33.751Z">
+<meta property="article:author" content="austin">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zyy213366.github.io/img/02.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://zyy213366.github.io/2025/01/11/temp-python/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":50,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'temp_python',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/02.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/%E4%B8%8B%E8%BD%BD1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">austin blog</span></a><a class="nav-page-title" href="/"><span class="site-name">temp_python</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">temp_python</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-11T13:36:51.000Z" title="发表于 2025-01-11 21:36:51">2025-01-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-11T13:45:33.751Z" title="更新于 2025-01-11 21:45:33">2025-01-11</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p><strong>例题</strong><br>假设我们有一张钢材信息表，包含以下字段：</p>
+<p>steel_id：钢材编号<br>steelspec：钢种<br>slabweight：钢材重量<br>slabthickness：钢材厚度</p>
+<p>目标：</p>
+<ol>
+<li>重命名 steel_id 为 steel_code。</li>
+<li>找出 slabweight 最大值对应的钢材信息。</li>
+<li>按 slabweight 降序排列钢材信息表。</li>
+<li>筛选出钢种为 X50M 的钢材，并计算其平均重量。</li>
+<li>筛选出钢种以 X 开头的钢材，将其厚度加 400，并将结果合并回主表。</li>
+<li>按钢种分组，计算每种钢材的平均重量，并命名结果列为 mean_slabweight。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line"># 1. 构造钢材数据表</span><br><span class="line">data = &#123;</span><br><span class="line">&#x27;steel_id&#x27;: [&#x27;S1&#x27;, &#x27;S2&#x27;, &#x27;S3&#x27;, &#x27;S4&#x27;, &#x27;S5&#x27;],</span><br><span class="line">&#x27;steelspec&#x27;: [&#x27;X50M&#x27;, &#x27;X60N&#x27;, &#x27;A40M&#x27;, &#x27;X50M&#x27;, &#x27;B70N&#x27;],</span><br><span class="line">&#x27;slabweight&#x27;: [150, 200, 100, 120, 180],</span><br><span class="line">&#x27;slabthickness&#x27;: [50, 60, 40, 50, 70]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(data)  # 将字典数据转换为 DataFrame 数据格式</span><br><span class="line">print(&quot;原始数据：&quot;)</span><br><span class="line">print(df)</span><br><span class="line"></span><br><span class="line"># 2. 重命名列 steel_id 为 steel_code</span><br><span class="line">df = df.rename(columns=&#123;&#x27;steel_id&#x27;: &#x27;steel_code&#x27;&#125;)  # 使用 rename() 方法重命名列名，将 &#x27;steel_id&#x27; 改为 &#x27;steel_code&#x27;</span><br><span class="line"># rename() 方法用于改变 DataFrame 中的列或行名称</span><br><span class="line">print(&quot;\n重命名列后的数据：&quot;)</span><br><span class="line">print(df)</span><br><span class="line"></span><br><span class="line"># 3. 找出 slabweight 最大值对应的钢材信息</span><br><span class="line">max_index = df[&#x27;slabweight&#x27;].idxmax()  # 使用 idxmax() 获取 &#x27;slabweight&#x27; 列最大值所在的索引</span><br><span class="line"># idxmax() 返回某一列（这里是 slabweight）最大值所在的行索引</span><br><span class="line">max_row = df.loc[max_index]  # 使用 loc[] 获取最大值对应的整行数据</span><br><span class="line"># loc[] 根据索引标签获取 DataFrame 中的某一行数据</span><br><span class="line">print(&quot;\nslabweight 最大值对应的钢材信息：&quot;)</span><br><span class="line">print(max_row)</span><br><span class="line"></span><br><span class="line"># 4. 按 slabweight 降序排列钢材信息表</span><br><span class="line">df_sorted = df.sort_values(by=&#x27;slabweight&#x27;, ascending=False)  # 使用 sort_values() 方法对 &#x27;slabweight&#x27; 列按降序进行排序</span><br><span class="line"># sort_values() 方法用于根据指定列进行排序，ascending=False 表示降序排列</span><br><span class="line">print(&quot;\n按 slabweight 降序排列后的数据：&quot;)</span><br><span class="line">print(df_sorted)</span><br><span class="line"></span><br><span class="line"># 5. 筛选出钢种为 X50M 的钢材，并计算其平均重量</span><br><span class="line">x50m_filter = df[&#x27;steelspec&#x27;] == &#x27;X50M&#x27;  # 使用布尔索引筛选出 &#x27;steelspec&#x27; 列中钢种为 &#x27;X50M&#x27; 的数据</span><br><span class="line"># 通过条件表达式来筛选 DataFrame 中符合条件的行</span><br><span class="line">x50m_data = df[x50m_filter]  # 获取筛选后的数据</span><br><span class="line">x50m_mean_weight = x50m_data[&#x27;slabweight&#x27;].mean()  # 使用 mean() 方法计算 &#x27;slabweight&#x27; 列的平均值</span><br><span class="line"># mean() 方法用于计算指定列的平均值</span><br><span class="line">print(&quot;\n钢种为 X50M 的钢材：&quot;)</span><br><span class="line">print(x50m_data)</span><br><span class="line">print(f&quot;X50M 的平均重量：&#123;x50m_mean_weight&#125;&quot;)</span><br><span class="line"></span><br><span class="line"># 6. 筛选钢种以 X 开头的钢材，将其厚度加 400</span><br><span class="line">x_start_filter = df[&#x27;steelspec&#x27;].str.startswith(&#x27;X&#x27;)  # 使用 str.startswith() 方法筛选出 &#x27;steelspec&#x27; 列以 &#x27;X&#x27; 开头的钢材</span><br><span class="line"># str.startswith() 用于检查每个字符串是否以指定字符（&#x27;X&#x27;）开始</span><br><span class="line">df_x_start = df[x_start_filter]  # 获取符合条件的钢材数据</span><br><span class="line">df_x_start.loc[:, &#x27;slabthickness&#x27;] = df_x_start[&#x27;slabthickness&#x27;] + 400  # 使用 loc[] 修改 &#x27;slabthickness&#x27; 列的厚度，增加 400</span><br><span class="line"># loc[] 用于根据标签选择并修改 DataFrame 中的特定位置</span><br><span class="line"></span><br><span class="line"># 将厚度加 400 的数据与原表合并</span><br><span class="line">df_combined = pd.concat([df, df_x_start])  # 使用 concat() 方法将原 DataFrame 和修改后的数据合并</span><br><span class="line"># concat() 用于连接多个 DataFrame，返回合并后的新 DataFrame</span><br><span class="line">print(&quot;\n厚度加 400 并合并后的数据：&quot;)</span><br><span class="line">print(df_combined)</span><br><span class="line"></span><br><span class="line"># 7. 按钢种分组，计算每种钢材的平均重量，并命名为 mean_slabweight</span><br><span class="line">df_grouped = df.groupby(by=&#x27;steelspec&#x27;)  # 使用 groupby() 方法按 &#x27;steelspec&#x27; 列分组</span><br><span class="line"># groupby() 方法用于将 DataFrame 按指定列分组，返回一个分组对象</span><br><span class="line">df_res = df_grouped.agg(&#123;&#x27;slabweight&#x27;: &#x27;mean&#x27;&#125;).reset_index()  # 使用 agg() 方法对每组数据的 &#x27;slabweight&#x27; 列求平均值</span><br><span class="line"># agg() 方法用于对每组数据应用某些聚合函数，这里是计算平均值</span><br><span class="line">df_res.rename(columns=&#123;&#x27;slabweight&#x27;: &#x27;mean_slabweight&#x27;&#125;, inplace=True)  # 使用 rename() 修改列名，将 &#x27;slabweight&#x27; 改为 &#x27;mean_slabweight&#x27;</span><br><span class="line"># rename() 修改列名，inplace=True 表示在原 DataFrame 上修改</span><br><span class="line">print(&quot;\n按钢种分组计算平均重量后的数据：&quot;)</span><br><span class="line">print(df_res)</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用的方法介绍</strong><br>rename()：用于重命名 DataFrame 中的列或行。</p>
+<p>功能：改变列或行的名称。<br>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">df.rename(columns=&#123;<span class="string">&#x27;steel_id&#x27;</span>: <span class="string">&#x27;steel_code&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
+<p>idxmax()：返回某一列中最大值的索引（位置）。</p>
+<p>功能：找到最大值所在的行位置。<br>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">df[<span class="string">&#x27;slabweight&#x27;</span>].idxmax()</span><br></pre></td></tr></table></figure>
+<p>loc[]：通过标签选择数据。</p>
+<p>功能：根据索引或条件选择行或列。<br>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">df.loc[max_index]  <span class="comment"># 根据索引选择数</span></span><br></pre></td></tr></table></figure>
+<p>sort_values()：对 DataFrame 按指定列进行排序。</p>
+<p>功能：根据某列升序或降序排列。<br>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">df.sort_values(by=<span class="string">&#x27;slabweight&#x27;</span>, ascending=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>mean()：计算某列的平均值。</p>
+<p>功能：计算数值列的均值。<br>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">df[<span class="string">&#x27;slabweight&#x27;</span>].mean()</span><br></pre></td></tr></table></figure>
+<p>str.startswith()：判断字符串是否以指定字符开头。</p>
+<p>功能：对字符串列进行条件筛选。<br>用法： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">df[<span class="string">&#x27;steelspec&#x27;</span>].<span class="built_in">str</span>.startswith(<span class="string">&#x27;X&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>concat()：连接多个 DataFrame。</p>
+<p>功能：沿行或列方向拼接 DataFrame。<br>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">pd.concat([df1, df2])</span><br></pre></td></tr></table></figure>
+<p>groupby()：根据某列分组。</p>
+<p>功能：对数据分组以便进行聚合计算。<br>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">df.groupby(by=<span class="string">&#x27;steelspec&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>agg()：对每组数据应用聚合函数。</p>
+<p>功能：对分组数据进行统计操作。<br>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">df_grouped.agg(&#123;<span class="string">&#x27;slabweight&#x27;</span>: <span class="string">&#x27;mean&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
+<p>reset_index()：重置索引。</p>
+<p>功能：将索引变为默认的整数索引。<br>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">df_res.reset_index()</span><br></pre></td></tr></table></figure>
+<p>inplace&#x3D;True：在原地修改 DataFrame。</p>
+<p>功能：直接修改原始数据。<br>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.rename(columns=&#123;<span class="string">&#x27;slabweight&#x27;</span>: <span class="string">&#x27;mean_slabweight&#x27;</span>&#125;, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://zyy213366.github.io">austin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://zyy213366.github.io/2025/01/11/temp-python/">https://zyy213366.github.io/2025/01/11/temp-python/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://zyy213366.github.io" target="_blank">austin blog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/./img/02.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/pay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/pay.jpg" alt="微信支付"/></a><div class="post-qr-code-desc">微信支付</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2024/12/29/dp%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%88%86%E4%BA%AB/" title="dp动态规划分享"><img class="cover" src="/img/%E4%B8%8B%E8%BD%BD4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">dp动态规划分享</div></div><div class="info-2"><div class="info-item-1">dp动态规划分享什么是动态规划 ？动态规划（Dynamic Programming，简称DP）是一种算法设计技巧，用于解决具有重叠子问题和最优子结构特性的问题。它是一种将复杂问题分解成更简单的子问题，并通过存储这些子问题的解来避免重复计算的方法。动态规划通常用于优化问题，特别是在计算数学、管理科学、经济学、计算机科学等领域。 动态规划的核心概念 重叠子问题（Overlapping Subproblems）： 在递归算法中，相同的子问题被多次解决。例如，在斐波那契数列的递归实现中，Fib(n) 会多次计算 Fib(n-1) 和 Fib(n-2)。动态规划通过存储这些子问题的解来避免重复计算。  最优子结构（Optimal Substructure）： 一个问题的最优解包含其子问题的最优解。例如，在背包问题中，整个背包的最优装载方式可以由各个子背包的最优装载方式组合而成。  无后效性（Non-Overlapping Property）：...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/%E4%B8%8B%E8%BD%BD1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">austin</div><div class="author-info-description">an interesting soul</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zyy213366/zyy213366.github.io"><i class="fab fa-github"></i><span>请关注我</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://www.youtube.com/" target="_blank" title="youtube"><i class="fa-brands fa-youtube"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是austin的博客，austin会在上面分享自己经历的有趣的事~</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/01/11/temp-python/" title="temp_python"><img src="/./img/02.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="temp_python"/></a><div class="content"><a class="title" href="/2025/01/11/temp-python/" title="temp_python">temp_python</a><time datetime="2025-01-11T13:36:51.000Z" title="发表于 2025-01-11 21:36:51">2025-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/29/dp%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%88%86%E4%BA%AB/" title="dp动态规划分享"><img src="/img/%E4%B8%8B%E8%BD%BD4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dp动态规划分享"/></a><div class="content"><a class="title" href="/2024/12/29/dp%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%88%86%E4%BA%AB/" title="dp动态规划分享">dp动态规划分享</a><time datetime="2024-12-29T02:20:30.000Z" title="发表于 2024-12-29 10:20:30">2024-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/25/markdown%E8%AF%AD%E6%B3%95/" title="markdown语法"><img src="/img/%E8%80%81%E5%85%AB.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="markdown语法"/></a><div class="content"><a class="title" href="/2024/12/25/markdown%E8%AF%AD%E6%B3%95/" title="markdown语法">markdown语法</a><time datetime="2024-12-25T07:22:36.000Z" title="发表于 2024-12-25 15:22:36">2024-12-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/23/3-md/" title="自动抢课脚本的python实现"><img src="/img/zqs.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自动抢课脚本的python实现"/></a><div class="content"><a class="title" href="/2024/12/23/3-md/" title="自动抢课脚本的python实现">自动抢课脚本的python实现</a><time datetime="2024-12-23T14:31:40.000Z" title="发表于 2024-12-23 22:31:40">2024-12-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/15/2-md/" title="c++中dfs以及bfs代码分享"><img src="/img/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++中dfs以及bfs代码分享"/></a><div class="content"><a class="title" href="/2024/12/15/2-md/" title="c++中dfs以及bfs代码分享">c++中dfs以及bfs代码分享</a><time datetime="2024-12-15T07:13:44.000Z" title="发表于 2024-12-15 15:13:44">2024-12-15</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/02.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By austin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">很高兴认识你</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"left",mobileDisplay:true,models:[{"path":"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE","position":[-10,35],"scale":0.15,"stageStyle":{"width":250,"height":250}},{"path":"https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json","scale":0.12,"position":[0,0],"stageStyle":{"width":250},"mobileScale":0.08,"mobilePosition":[0,0],"mobileStageStyle":{"width":180}},{"path":"https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json","scale":0.12,"position":[0,0],"mobileScale":0.08,"mobilePosition":[0,0],"mobileStageStyle":{"width":180},"stageStyle":{"width":250}},{"path":"https://model.oml2d.com/Senko_Normals/senko.model3.json","position":[-10,20]}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:15000,message:function(){
+  return axios.get('https://v1.hitokoto.cn?c=i')
+    .then(function (response) {
+      return response.data.hitokoto ;
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+}
+}}});</script><!-- hexo injector body_end end --></body></html>
