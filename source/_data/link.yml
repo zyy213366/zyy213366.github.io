@@ -6,6 +6,16 @@
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: 快速、简单且强大的网志框架
 
+    - name: xhxbb
+      link: https://xhxbb.icu/
+      avatar: /img/icons8-荷马辛普森.gif
+      descr: 你一生不得不点进去的链接之一
+
+
+    - name: Sanstale
+      link: https://www.cybereal.one/
+      avatar: /img/icons8-荷马辛普森.gif
+      descr: 你一生不得不点进去的链接之一
 - class_name: 网站
   class_desc: 值得推荐的网站
   link_list:

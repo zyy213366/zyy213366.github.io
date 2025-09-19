@@ -20,7 +20,6 @@ menu:
   主页: / || fas fa-home
   Archives: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
-  分类: /categories/ || fas fa-folder-open
   链接||fas fa-list:
     友情链接: /link/ || fas fa-link
     关于: /about/ || fas fa-heart
@@ -96,7 +95,8 @@ background: /img/02.jpg
 
 cover:
   # Disable the cover or not
-  index_enable: true
+  index_enable: false
+
   aside_enable: true
   archives_enable: true
   # When cover is not set, the default cover is displayed
@@ -107,6 +107,7 @@ cover:
 error_img:
   flink: /img/friend_404.gif
   post_page: /img/404.jpg
+
 
 # A simple 404 page
 error_404:
@@ -198,6 +199,7 @@ toc:
   style_simple: false
   scroll_percent: true
 
+
 post_copyright:
   enable: true
   decode: true
@@ -285,7 +287,9 @@ aside:
       enable: true
       icon: fab fa-github
       text: 请关注我
-      link: https://github.com/xxxxxx
+      link: https://github.com/zyy213366/zyy213366.github.io
+
+
   card_announcement:
     enable: true
     content: 这是austin的博客，austin会在上面分享自己经历的有趣的事~
@@ -1011,7 +1015,7 @@ pwa:
   favicon_16_16:
   mask_icon:
 
-# Open graph meta tags
+# Open graph meta
 # https://hexo.io/docs/helpers#open-graph
 Open_Graph_meta:
   enable: true
