@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>如何搭建梯子</title>
+      <link href="/2026/09/27/tizi/"/>
+      <url>/2026/09/27/tizi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="我们为什么要自建梯子"><a href="#我们为什么要自建梯子" class="headerlink" title="我们为什么要自建梯子"></a>我们为什么要自建梯子</h2><p>如果从价格上来看，其实优势不大，以我现在买的梯子来看，12一个月，而且有各种节点随意切换，性价比是很高的。如果自建梯子，首先买vps要钱，后续折腾也比较费时间，性价比没有那么高。<br>但是胜在比较稳定，机场会跑路，指不定什么时候会崩，如果崩了，就是在没有科学上网的环境下，再找一个稳定便宜的梯子，其实是比较困难的，同时如果很多人公用一个ip，节点不干净，后续很多事情也很难办成，比如claude的注册诸如此类，所以一个比较干净的ip还是很重要的，所以我们必须要一个自用的梯子。</p><h2 id="我们需要什么"><a href="#我们需要什么" class="headerlink" title="我们需要什么"></a>我们需要什么</h2><p>一台海外vps，这就是所有你需要的。</p><h2 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h2><p>首先在racknerd上买一台海外便宜vps，配置最低的就行，我是1G+20G大概一百出头，核算下来每个月12块，和买的梯子差不多，买下来根据我的血泪教训先ping一下，然后在ssh登录，如果登不上果断在72小时里面换ip，因为72小时之内是免费的，不要想着根据油管教程什么用cf再做一个域名解析的cdn加速，我实测下来没有用，不知道是封了cf还是为啥，根本用不了他的dns解析。<br>如果你拿到了一个干净ip，事情好办多了，通过finalshell的ssh连上这台服务器，然后在终端输入命令，先去更新apt下载需要的安装包</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt update -y &amp;&amp; apt install -y curl &amp;&amp; apt install -y socat</span><br></pre></td></tr></table></figure><p>之后得下xui，这是给xray的一个展示界面，xray就是监听底层各种端口以及判断底层协议的一个工具，而xui则是用一个web端把这些东西展示出来,所以我们要输入命令</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)</span><br></pre></td></tr></table></figure><p>下完之后同意给我们分配随机端口，然后关掉防火墙安全组之类的东西，登录到他给你的url，在里面添加入站以及调配协议，传输和安全，协议是保证流量加密的规则，传输协议则是在流量加密后传输再进行一层加密，而安全就是隐藏流量目的地，让gfw看不出来，现在常用的协议其实就是vless vmess shadowrocket，传输tcp其实就行，安全tls和reality就行，实测下来最重要的就是协议，后面传输和安全用处没有那么大，安全目前shadowrocket最好用，这也是为什么机场节点基本都是shadowroacket而vless节点很少的原因，选完之后在客户端把几个配好的节点入站，差不多就完成了。<br>安卓设备用v2box，苹果不知道，没用过ios，但是不管怎么说都用不了clash导入，因为导入链接不支持，需要转一下  </p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>目前流量和校园网都支持访问，家里wifi不行，怀疑可能是出国前最后一跳ip把出国流量封了，这个时候重启设备，让光猫自己再重新找其他跳转ip，但我还没尝试。<br>我买的是美国西雅图的vps，实测延迟在200ms-300ms左右，已经可以说是这个距离上很快了。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 生活记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>壹佰塊</title>
       <link href="/2026/08/01/money-get/"/>
       <url>/2026/08/01/money-get/</url>
